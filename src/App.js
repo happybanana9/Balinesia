@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './components/navBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
+import Recommendation from './pages/Recommendation';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/cari' element={<Homepage />} />
           <Route path='/jelajah' element={<Homepage />} />
-          <Route path='/rekomendasi' element={<Homepage />} />
+          <Route path='/rekomendasi' element={<Recommendation />} />
         </Routes>
       </Router>
     </div>
