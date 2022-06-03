@@ -1,36 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Sling as Hamburger } from 'hamburger-react'
+import {Link} from "react-router-dom"
 
 const NavBar = () => {
+  const [isOpen, setOpen] = useState(false)
   return (
-      <header Class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-      <div Class="container">
-        <div Class="flex items-center justify-between relative">
-          <div Class="px-4">
-            <a href="#beranda" Class="font-black text-3xl text-theme1 block py-6 hover:text-theme2">Balinesia</a>
+      <header className="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+      <div className="container">
+        <div className="flex items-center justify-between relative">
+          <div className="px-4">
+            <Link to="/" className="font-black text-3xl text-theme1 block py-6 hover:text-theme2">Balinesia</Link>
           </div>
-          <div Class="flex items-center px-4">
-            <button id="hamburger" name="hamburger" type="button" Class="block absolute right-4 lg:hidden">
-              <span Class="hamburger-line transition duration-200 ease-in-out origin-top-left"></span>
-              <span Class="hamburger-line transition duration-200 ease-in-out"></span>
-              <span Class="hamburger-line transition duration-200 ease-in-out origin-bottom-left"></span>
-            </button>
+          <div className="flex items-center px-4">
+            <div className="block absolute right-4 lg:hidden">
+              <Hamburger toggled={isOpen} toggle={setOpen} color="#fafafa" onToggle={toggled => {
+                if (toggled) {
+                  // open a menu
+                  console.log(toggled)
+                } else {
+                  // close a menu
+                  console.log(toggled)
+                }
+                }} />  
+            </div>
             <nav
-              id="nav-menu"
-              Class="hidden absolute py-5 bg-black bg-opacity-20 backdrop-blur-sm shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:backdrop-blur-0"
+              className={isOpen ? "navmenu-show" : "navmenu-hidden"}
             >
-              <ul Class="block lg:flex">
-                <li Class="group">
-                  <a href="#beranda" Class="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Beranda</a>
+              <ul className="block lg:flex">
+                <li className="group">
+                  <Link to="/" className="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Beranda</Link>
                 </li>
-                <li Class="group">
-                  <a href="#home" Class="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Cari Destinasi</a>
+                <li className="group">
+                  <Link to="/cari" className="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Cari Destinasi</Link>
                 </li>
-                <li Class="group">
-                  <a href="#home" Class="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Jelajah</a>
+                <li className="group">
+                  <Link to="/jelajah" className="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Jelajah</Link>
                 </li>
-                <li Class="group">
-                  <a href="#home" Class="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Rekomendasi</a>
-                </li>
+                <li className="group">
+                  <Link to="/rekomendasi" className="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Rekomendasi</Link>
+                </li> 
               </ul>
             </nav>
           </div>

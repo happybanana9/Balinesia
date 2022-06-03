@@ -8,3 +8,12 @@
     @apply font-[poppins]
   }
 }
+
+@layer components {
+  .navmenu-hidden{
+    @apply hidden absolute py-5 bg-black bg-opacity-20 backdrop-blur-sm shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:backdrop-blur-0
+  }
+  .navmenu-show{
+    @apply absolute py-5 bg-black bg-opacity-20 backdrop-blur-sm shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:backdrop-blur-0
+  }
+}
