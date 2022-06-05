@@ -4,7 +4,7 @@ import Jelajah from '../components/Jelajah'
 
 function Browsing() {
     return (
-      <><Footer /><Jelajah /></>
+      <><Jelajah /><Footer /></>
     )
   }
   

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <section class="absolute top-full w-full text-gray-700 bg-white body-font">
+    <section class="w-full text-gray-700 bg-white body-font">
     <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
         <a href="#_" class="text-xl font-black leading-none text-theme3 select-none logo ">Balinesia<span class="text-indigo-600">.</span></a>
         <p class="mt-4 text-sm text-center text-gray-600 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0 sm:text-left">© 2022 Balinesia - Sarana Rekomendasi Destinasi Wisata Di Provinsi Bali

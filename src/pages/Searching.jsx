@@ -4,7 +4,7 @@ import Pencarian from '../components/Pencarian'
 
 function Searching() {
     return (
-      <><Footer /><Pencarian /></>
+      <><Pencarian /><Footer /></>
     )
   }
   
