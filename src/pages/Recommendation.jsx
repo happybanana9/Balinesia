@@ -4,7 +4,7 @@ import Rekomendasi from '../components/Rekomendasi'
 
 function Recommendation() {
   return (
-    <><Footer /><Rekomendasi /></>
+    <><Rekomendasi /><Footer /></>
   )
 }
 
