@@ -2,7 +2,7 @@ import React from 'react'
 import { Footer } from '../components/Footer'
 import Rekomendasi from '../components/Rekomendasi'
 
-function Recommendation() {
+function Recommendation () {
   return (
     <><Rekomendasi /><Footer /></>
   )

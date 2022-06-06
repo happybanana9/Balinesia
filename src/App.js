@@ -6,7 +6,7 @@ import Recommendation from './pages/Recommendation';
 import Browsing from './pages/Browsing';
 import Searching from './pages/Searching';
 
-function App() {
+function App () {
   return (
     <div>
       <Router>

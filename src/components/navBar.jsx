@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Sling as Hamburger } from 'hamburger-react'
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false)
@@ -21,10 +21,10 @@ const NavBar = () => {
                   // close a menu
                   console.log(toggled)
                 }
-                }} />  
+              }} />
             </div>
             <nav
-              className={isOpen ? "navmenu-show" : "navmenu-hidden"}
+              className={isOpen ? 'navmenu-show' : 'navmenu-hidden'}
             >
               <ul className="block lg:flex">
                 <li className="group">
@@ -38,7 +38,7 @@ const NavBar = () => {
                 </li>
                 <li className="group">
                   <Link to="/rekomendasi" className="text-base font-bold text-theme1 py-2 mx-8 flex group-hover:text-theme2">Rekomendasi</Link>
-                </li> 
+                </li>
               </ul>
             </nav>
           </div>

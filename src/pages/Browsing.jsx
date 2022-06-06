@@ -2,10 +2,10 @@ import React from 'react'
 import { Footer } from '../components/Footer'
 import Jelajah from '../components/Jelajah'
 
-function Browsing() {
-    return (
+function Browsing () {
+  return (
       <><Jelajah /><Footer /></>
-    )
-  }
-  
-  export default Browsing
+  )
+}
+
+export default Browsing

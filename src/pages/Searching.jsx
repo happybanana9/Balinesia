@@ -2,10 +2,10 @@ import React from 'react'
 import { Footer } from '../components/Footer'
 import Pencarian from '../components/Pencarian'
 
-function Searching() {
-    return (
+function Searching () {
+  return (
       <><Pencarian /><Footer /></>
-    )
-  }
-  
-  export default Searching
+  )
+}
+
+export default Searching
