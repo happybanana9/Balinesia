@@ -1,170 +1,75 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+
+const Location = [
+  { name: 'Location One' },
+  { name: 'Location Two' },
+  { name: 'Location Three' },
+  { name: 'Location Four' },
+  { name: 'Location Five' },
+  { name: 'Location Six' }
+]
 
 const Dropdown = () => {
+  const [selected, setSelected] = useState(Location[0])
+
   return (
-        <div className="top-2 flex flex-wrap justify-center items-center gap-14 p-7">
-            {/* Dropdown Location */}
-            <button className="
-                relative
-                flex jutify-center items-center
-                bg-gray-700
-                text-white rounded-2xl
-                focus:outline-none focus:ring
-                ring-gray-700
-                group
-                ">
-                <p className="px-4">Dropdown</p>
-                <span className="border-l p-2">
-                    <svg
-                    className="w-7 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                        ></path>
-                    </svg>
-                </span>
-                <div className="
-                    absolute top-full
-                    hidden group-focus:block
-                    min-w-full w-max
-                    bg-gray-700
-                    shadow-md mt-1 rounded
-                ">
-                    <ul className="text-left border rounded">
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 1
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 2
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 3
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 4
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600">
-                        menu list 5
-                    </li>
-                    </ul>
-                </div>
-            </button>
-            {/* Dropdown Price */}
-            <button className="
-                relative
-                flex jutify-center items-center
-                bg-gray-700
-                text-white rounded-2xl
-                focus:outline-none focus:ring
-                ring-gray-700
-                group
-                ">
-                <p className="px-4">Dropdown</p>
-                <span className="border-l p-2">
-                    <svg
-                    className="w-7 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                        ></path>
-                    </svg>
-                </span>
-                <div className="
-                    absolute top-full
-                    hidden group-focus:block
-                    min-w-full w-max
-                    bg-gray-700
-                    shadow-md mt-1 rounded
-                ">
-                    <ul className="text-left border rounded">
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 1
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 2
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 3
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 4
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600">
-                        menu list 5
-                    </li>
-                    </ul>
-                </div>
-            </button>
-            {/* Dropdown Rating */}
-            <button className="
-                relative
-                flex jutify-center items-center
-                bg-gray-700
-                text-white rounded-2xl
-                focus:outline-none focus:ring
-                ring-gray-700
-                group
-                ">
-                <p className="px-4">Dropdown</p>
-                <span className="border-l p-2">
-                    <svg
-                    className="w-7 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                        ></path>
-                    </svg>
-                </span>
-                <div className="
-                    absolute top-full
-                    hidden group-focus:block
-                    min-w-full w-max
-                    bg-gray-700
-                    shadow-md mt-1 rounded
-                ">
-                    <ul className="text-left border rounded">
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 1
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 2
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 3
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600 border-b">
-                        menu list 4
-                    </li>
-                    <li className="px-4 py-1 hover:bg-gray-600">
-                        menu list 5
-                    </li>
-                    </ul>
-                </div>
-            </button>
-            <button className="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-3xl">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>Cari Destinasi
-            </button>
-        </div>
+  // Dropdown Location Start
+          <div className="w-72 mx-auto mt-5">
+            <Listbox value={selected} onChange={setSelected}>
+              <div className="relative mt-1">
+                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <span className="block truncate text-theme3">{selected.name}</span>
+                  <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                    <SelectorIcon
+                      className="h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </Listbox.Button>
+                <Transition
+                  as={Fragment}
+                  leave="transition ease-in duration-100"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Listbox.Options className="mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    {Location.map((person, personIdx) => (
+                      <Listbox.Option
+                        key={personIdx}
+                        className={({ active }) =>
+                          `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                            active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                          }`
+                        }
+                        value={person}
+                      >
+                        {({ selected }) => (
+                          <>
+                            <span
+                              className={`block truncate ${
+                                selected ? 'font-medium' : 'font-normal'
+                              }`}
+                            >
+                              {person.name}
+                            </span>
+                            {selected
+                              ? (
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                                <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                              </span>
+                                )
+                              : null}
+                          </>
+                        )}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
+                </Transition>
+              </div>
+            </Listbox>
+          </div>
   )
 }
 
