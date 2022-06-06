@@ -1,51 +1,169 @@
-import React, { useState } from "react"
-const Dropdown = ({options}) =>{
-    const [showOptions, setShowOptions] = useState(false);
-    const handleClick = () =>{
-        setShowOptions(!showOptions);
-    };
+import React from "react"
+const Dropdown = () =>{
     return (
-        <div class="mt-12 gap-14 flex-wrap flex justify-center items-center">
-            <div class="relative inline-block text-left">
-            <div>
-                <button 
-                    onClick={handleClick} 
-                    type="button" 
-                    class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" 
-                    id="menu-button" 
-                    aria-expanded="true" 
-                    aria-haspopup="true">Options
+        <div class="relative flex justify-center items-center gap-14 pt-7">
+            {/* Dropdown Location */}
+            <button class="
+                relative 
+                flex jutify-center items-center 
+                bg-gray-700 
+                text-white rounded-2xl 
+                focus:outline-none focus:ring 
+                ring-gray-700
+                group
+                ">
+                <p class="px-4">Dropdown</p>
+                <span class="border-l p-2">
                     <svg 
-                        class="-mr-1 ml-2 h-5 w-5" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 20 20" 
-                        fill="currentColor" 
-                        aria-hidden="true"
-                    >
-                    <path 
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" 
-                        clip-rule="evenodd" 
-                    />
+                    class="w-7 h-5" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg">
+                        <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M19 9l-7 7-7-7"
+                        ></path>
                     </svg>
-                </button>
-            </div>
-            {showOptions && (
-                <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                    <div class="py-1" role="none">
-                    {options && options.map((options) =>(
-                        <a href="/" 
-                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" 
-                        role="menuitem" 
-                        tabindex="-1" 
-                        id="menu-item-0">
-                            {options}
-                        </a>
-                    ))}
-                    </div>
+                </span>
+                <div class="
+                    absolute top-full
+                    hidden group-focus:block 
+                    min-w-full w-max 
+                    bg-gray-700 
+                    shadow-md mt-1 rounded
+                ">
+                    <ul class="text-left border rounded">
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 1
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 2
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 3
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 4
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600">
+                        menu list 5
+                    </li>
+                    </ul>
                 </div>
-            )}
-            </div>
+            </button>
+            {/* Dropdown Price */}
+            <button class="
+                relative 
+                flex jutify-center items-center 
+                bg-gray-700 
+                text-white rounded-2xl 
+                focus:outline-none focus:ring 
+                ring-gray-700
+                group
+                ">
+                <p class="px-4">Dropdown</p>
+                <span class="border-l p-2">
+                    <svg 
+                    class="w-7 h-5" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg">
+                        <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M19 9l-7 7-7-7"
+                        ></path>
+                    </svg>
+                </span>
+                <div class="
+                    absolute top-full
+                    hidden group-focus:block 
+                    min-w-full w-max 
+                    bg-gray-700 
+                    shadow-md mt-1 rounded
+                ">
+                    <ul class="text-left border rounded">
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 1
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 2
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 3
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 4
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600">
+                        menu list 5
+                    </li>
+                    </ul>
+                </div>
+            </button>
+            {/* Dropdown Rating */}
+            <button class="
+                relative 
+                flex jutify-center items-center 
+                bg-gray-700 
+                text-white rounded-2xl 
+                focus:outline-none focus:ring 
+                ring-gray-700
+                group
+                ">
+                <p class="px-4">Dropdown</p>
+                <span class="border-l p-2">
+                    <svg 
+                    class="w-7 h-5" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg">
+                        <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M19 9l-7 7-7-7"
+                        ></path>
+                    </svg>
+                </span>
+                <div class="
+                    absolute top-full
+                    hidden group-focus:block 
+                    min-w-full w-max 
+                    bg-gray-700 
+                    shadow-md mt-1 rounded
+                ">
+                    <ul class="text-left border rounded">
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 1
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 2
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 3
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600 border-b">
+                        menu list 4
+                    </li>
+                    <li class="px-4 py-1 hover:bg-gray-600">
+                        menu list 5
+                    </li>
+                    </ul>
+                </div>
+            </button>
+            <button class="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-3xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+	            Cari Destinasi
+            </button>
         </div>
     )
 }
