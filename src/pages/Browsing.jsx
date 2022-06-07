@@ -1,11 +1,15 @@
-import React from 'react'
-import { Footer } from '../components/Footer'
-import Jelajah from '../components/Jelajah'
+/* eslint-disable prettier/prettier */
+import React from "react";
+import { Footer } from "../components/Footer";
+import Jelajah from "../components/Jelajah";
 
-function Browsing () {
+function Browsing() {
   return (
-      <><Jelajah /><Footer /></>
-  )
+    <>
+      <Jelajah />
+      <Footer />
+    </>
+  );
 }
 
-export default Browsing
+export default Browsing;

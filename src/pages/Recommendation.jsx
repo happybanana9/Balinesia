@@ -1,11 +1,15 @@
-import React from 'react'
-import { Footer } from '../components/Footer'
-import Rekomendasi from '../components/Rekomendasi'
+/* eslint-disable prettier/prettier */
+import React from "react";
+import { Footer } from "../components/Footer";
+import Rekomendasi from "../components/Rekomendasi";
 
-function Recommendation () {
+function Recommendation() {
   return (
-    <><Rekomendasi /><Footer /></>
-  )
+    <>
+      <Rekomendasi />
+      <Footer />
+    </>
+  );
 }
 
-export default Recommendation
+export default Recommendation;

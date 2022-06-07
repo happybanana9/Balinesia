@@ -2,10 +2,9 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "jest": true
   },
-  "extends": ["plugin:react/recommended", "standard"],
-  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,8 +12,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react"],
   "rules": {
-    "semi": "off"
+    "react/react-in-jsx-scope": "off"
   }
 }

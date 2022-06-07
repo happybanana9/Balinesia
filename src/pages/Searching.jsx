@@ -1,11 +1,15 @@
-import React from 'react'
-import { Footer } from '../components/Footer'
-import Pencarian from '../components/Pencarian'
+/* eslint-disable prettier/prettier */
+import React from "react";
+import { Footer } from "../components/Footer";
+import Pencarian from "../components/Pencarian";
 
-function Searching () {
+function Searching() {
   return (
-      <><Pencarian /><Footer /></>
-  )
+    <>
+      <Pencarian />
+      <Footer />
+    </>
+  );
 }
 
-export default Searching
+export default Searching;

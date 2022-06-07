@@ -1,12 +1,13 @@
-import React from 'react'
-import Hero from '../components/Hero'
+/* eslint-disable prettier/prettier */
+import React from "react";
+import Hero from "../components/Hero";
 
-function Homepage () {
+function Homepage() {
   return (
     <div>
-          <Hero />
+      <Hero />
     </div>
-  )
+  );
 }
 
-export default Homepage
+export default Homepage;
