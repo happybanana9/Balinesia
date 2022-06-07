@@ -3,6 +3,7 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 
 const Location = [
+  { name: 'Lokasi' },
   { name: 'Location One' },
   { name: 'Location Two' },
   { name: 'Location Three' },
@@ -11,8 +12,25 @@ const Location = [
   { name: 'Location Six' }
 ]
 
+const Rating = [
+  { rate: 'Rating' },
+  { rate: '⭐4-⭐5' },
+  { rate: '⭐3-⭐4' },
+  { rate: '⭐2-⭐3' },
+  { rate: '⭐1-⭐2' }
+]
+const Harga = [
+  { price: 'Harga' },
+  { price: 'Diatas 100.000' },
+  { price: '50.000 - 100.000' },
+  { price: '25.000 - 50.000' },
+  { price: 'Gratis' }
+]
+
 const Dropdown = () => {
   const [selected, setSelected] = useState(Location[0])
+  const [selectedrate, setSelectedRate] = useState(Rating[0])
+  const [selectedprice, setSelectedPrice] = useState(Harga[0])
 
   return (
     <div className='flex justify-center mt-5'>
@@ -20,7 +38,7 @@ const Dropdown = () => {
             {/* Dropdown Location Start */}
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1 mx-5">
-                <Listbox.Button className="relative w-full h-auto cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="relative w-full h-auto cursor-default rounded-lg bg-white py-2 pl-3 p-36 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate text-theme3">{selected.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon
@@ -36,15 +54,15 @@ const Dropdown = () => {
                   leaveTo="opacity-0"
                 >
                   <Listbox.Options className="mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                    {Location.map((person, personIdx) => (
+                    {Location.map((location, locationId) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={locationId}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
                             active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                           }`
                         }
-                        value={person}
+                        value={location}
                       >
                         {({ selected }) => (
                           <>
@@ -53,7 +71,7 @@ const Dropdown = () => {
                                 selected ? 'font-medium' : 'font-normal'
                               }`}
                             >
-                              {person.name}
+                              {location.name}
                             </span>
                             {selected
                               ? (
@@ -71,10 +89,10 @@ const Dropdown = () => {
               </div>
             </Listbox>
             {/* Dropdown Location Start */}
-            <Listbox value={selected} onChange={setSelected}>
+            <Listbox value={selectedrate} onChange={setSelectedRate}>
               <div className="relative mt-1 mx-5">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <span className="block truncate text-theme3">{selected.name}</span>
+                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <span className="block truncate text-theme3">{selectedrate.rate}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon
                       className="h-5 w-5 text-gray-400"
@@ -89,15 +107,15 @@ const Dropdown = () => {
                   leaveTo="opacity-0"
                 >
                   <Listbox.Options className="mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                    {Location.map((person, personIdx) => (
+                    {Rating.map((rates, ratesId) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={ratesId}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
                             active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                           }`
                         }
-                        value={person}
+                        value={rates}
                       >
                         {({ selected }) => (
                           <>
@@ -106,7 +124,7 @@ const Dropdown = () => {
                                 selected ? 'font-medium' : 'font-normal'
                               }`}
                             >
-                              {person.name}
+                              {rates.rate}
                             </span>
                             {selected
                               ? (
@@ -124,10 +142,10 @@ const Dropdown = () => {
               </div>
             </Listbox>
             {/* Dropdown Location Start */}
-            <Listbox value={selected} onChange={setSelected}>
+            <Listbox value={selectedprice} onChange={setSelectedPrice}>
               <div className="relative mt-1 mx-5">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <span className="block truncate text-theme3">{selected.name}</span>
+                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 p-28 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <span className="block truncate text-theme3">{selectedprice.price}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon
                       className="h-5 w-5 text-gray-400"
@@ -142,15 +160,15 @@ const Dropdown = () => {
                   leaveTo="opacity-0"
                 >
                   <Listbox.Options className="mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                    {Location.map((person, personIdx) => (
+                    {Harga.map((prices, priceId) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={priceId}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
                             active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                           }`
                         }
-                        value={person}
+                        value={prices}
                       >
                         {({ selected }) => (
                           <>
@@ -159,7 +177,7 @@ const Dropdown = () => {
                                 selected ? 'font-medium' : 'font-normal'
                               }`}
                             >
-                              {person.name}
+                              {prices.price}
                             </span>
                             {selected
                               ? (
