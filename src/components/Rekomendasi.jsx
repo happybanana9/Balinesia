@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-key */
 /* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
 // import wisata1 from "../assets/wisata1.jpg";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import request from "../request";
 import axios from "axios";
@@ -30,27 +30,28 @@ const Rekomendasi = () => {
           {/* Cards And Background Start */}
           <Swiper
         slidesPerView={1}
-        spaceBetween={10}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         loop={true}
+        navigation={true}
+        modules={[Autoplay, Navigation]}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
-          768: {
-            slidesPerView: 4,
+          1368: {
+            slidesPerView: 5,
             spaceBetween: 40,
           },
-          1024: {
-            slidesPerView: 5,
-            spaceBetween: 50,
-          },
         }}
-        className="mySwiper "
+        className="mySwiper flex items-center mx-auto justify-center mt-5 !p-8 "
       >
-        {wisata.map((value,urut)=>{
-          console.log(urut)
-         return <SwiperSlide><Cards item={value} key={urut} /></SwiperSlide>})}
+        {wisata.map((value,index)=>{
+         return <SwiperSlide style={{ backgroundImage: `url('${`https://image.tmdb.org/t/p/w500/`+ value.backdrop_path}')` }} className="card-container"key={index}><Cards item={value}/></SwiperSlide>})}
       </Swiper>
           {/* Cards And Background End */}
         </div>

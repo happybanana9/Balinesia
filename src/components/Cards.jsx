@@ -7,10 +7,6 @@ import { Link } from "react-router-dom";
 const Cards = (props) => {
   return (
     <>
-      <div
-        className="card-container"
-        style={{ backgroundImage: `url('${`https://image.tmdb.org/t/p/w500/`+ props.item.backdrop_path}')` }}
-      >
         <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
           <img
             className="w-full h-40 object-cover rounded-xl"
@@ -19,16 +15,15 @@ const Cards = (props) => {
           />
           <div className="p-2">
             <Link to='/'>     
-            <h2 className="font-bold text-lg mb-2 text-theme1 ">{props.item.title || props.item.name}</h2>
+            <h2 className="font-bold text-lg mb-2 text-theme1 h-12 overflow-hidden flex justify-center items-center">{props.item.title || props.item.name}</h2>
             </Link>
-            <p className="text-sm text-gray-100">{props.item.overview.substring(0,150) +"..."}
+            <p className="text-sm text-gray-100 ">{props.item.overview.substring(0,80) +"..."}
             </p>
             <h3 className="text-center font-semibold text-theme1 mt-5">
               Lokasi
             </h3>
           </div>
         </div>
-      </div>
     </>
   );
 };
