@@ -7,8 +7,6 @@ import Cards from "./Cards";
 import { Swiper, SwiperSlide, } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
-import request from "../request";
-import axios from "axios";
 const Rekomendasi = () => {
   const [wisata, setWisata] = useState([]);
   const getWisataRekomendasi = async () => {
@@ -21,9 +19,6 @@ const Rekomendasi = () => {
 
   useEffect(()=>{
     getWisataRekomendasi()
-    // axios.get(request.requestWisata).then((response)=>{
-    //   setWisata(response.data.results)
-    // })
   },[])
 
   return (
