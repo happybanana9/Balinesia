@@ -7,7 +7,7 @@ const Pencarian = () => {
   return (
     <section id="Pencarian">
       <div className="w-full h-full relative bg-theme3">
-        <div className="relative px-8 py-32 text-left md:max-w-none text-center text-theme1">
+        <div className="relative px-8 py-32 md:max-w-none text-center text-theme1">
           <h1 className="font-black text-3xl">Pencarian Destinasi Wisata di</h1>
           <h1 className="font-black text-3xl">Provinsi Bali</h1>
           <Dropdown />
