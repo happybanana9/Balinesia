@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Recommendation from './pages/Recommendation';
 import Browsing from './pages/Browsing';
 import Searching from './pages/Searching';
+import Details from './pages/Details';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/cari' element={<Searching />} />
           <Route path='/jelajah' element={<Browsing />} />
           <Route path='/rekomendasi' element={<Recommendation />} />
+          <Route path='/details' element={<Details />} />
         </Routes>
       </Router>
     </div>

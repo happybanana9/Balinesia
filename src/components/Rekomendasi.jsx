@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Cards from "./Cards";
-// import wisata1 from "../assets/wisata1.jpg";
 import { Swiper, SwiperSlide, } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
@@ -24,7 +23,7 @@ const Rekomendasi = () => {
   return (
     <section id="Rekomendasi">
       <div className="w-full h-full bg-theme3">
-        <div className="relative px-4 py-32 md:max-w-none text-center">
+        <div className="relative px-4 py-64 md:max-w-none text-center">
           <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-theme1 text-center sm:leading-none md:text-6xl lg:text-7xl">
             Rekomendasi
           </h1>
@@ -34,6 +33,7 @@ const Rekomendasi = () => {
           {/* Cards And Background Start */}
           <Swiper
         slidesPerView={1}
+        spaceBetween={50}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -45,7 +45,7 @@ const Rekomendasi = () => {
         breakpoints={{
           640: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 35,
           },
           1368: {
             slidesPerView: 5,

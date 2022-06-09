@@ -14,10 +14,10 @@ const Cards = (props) => {
             alt={props.item.nama}
           />
           <div className="p-2">
-            <Link to='/'>     
-            <h2 className="font-bold text-lg mb-2 text-theme1 h-12 overflow-hidden flex justify-center items-center">{props.item.name}</h2>
+            <Link to='/details'>     
+            <h2 className="font-bold text-lg mb-2 text-theme1 h-12 overflow-hidden flex justify-center items-center">{props.item.nama}</h2>
             </Link>
-            <p className="text-sm text-gray-100 ">{props.item.deskripsi.substring(0,80) +"..."}
+            <p className="text-sm text-gray-100 ">{props.item.deskripsi.substring(0,60) +"..."}
             </p>
             <h3 className="text-center font-semibold text-theme1 mt-5">
               {props.item.lokasi}

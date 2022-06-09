@@ -12,28 +12,6 @@ const Jelajah = () => {
           <div className="mx-auto mt-1 text-theme1 md:mt-3 md:max-w-lg md:text-center lg:text-lg">
             Jelajahi Destinasi Wisata Yang Ada Di Bali
           </div>
-          <div className="mt-12 gap-8 flex-wrap flex justify-center items-center">
-            {/* Cards And Background Root */}
-            <div
-              className="card-container w-96"
-              style={{ backgroundImage: `url('${wisata1}')` }}
-            >
-              <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
-                <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
-                  alt=""
-                />
-                <div className="p-2">
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">Bali</h2>
-                  <p className="text-sm text-gray-100">
-                    Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
-                    to our Youtube channel for more{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="mt-12 gap-10 flex-wrap flex justify-center items-center">
             {/* Cards And Background child Start */}
             <div
