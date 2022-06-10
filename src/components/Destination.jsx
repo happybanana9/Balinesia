@@ -1,8 +1,23 @@
 /* eslint-disable prettier/prettier */
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import wisata1 from "../assets/wisata1.jpg"
 
 const Destination = () => {
+      const {id} = useParams()
+      const [wisata, setWisata] = useState([]);
+      const getWisataDestination = async () => {
+        const response = await axios.get('http://localhost:5000/api/destinations/' + id,{ params: { id } });
+        const resData = response.data.data;
+        setWisata(resData);
+      }
+    
+      useEffect(()=>{
+        getWisataDestination()
+      },[id])
+
+      console.log(wisata)
   return (
     <>
       <section id="Destinasi">
@@ -14,7 +29,7 @@ const Destination = () => {
                                     <img className="w-full h-40 object-cover rounded-xl" src={wisata1} alt="" />
                               </div>
                               <div className=" text-theme1 mt-4">
-                                    <h1 className="text-center font-bold text-xl">Alas Harum</h1>
+                                    <h1 className="text-center font-bold text-xl">{wisata.nama}</h1>
                                     <p className="text-justify text-base mt-4">Keindahan Indonesia tersebar merata ke seluruh penjuru. Tak terkecuali pulau – pulau kecilnya seperti di Pulau Bali. Meskipun tidak memiliki area yang luas, namun pesona keindahan alam Bali tidak perlu diragukan lagi. Salah satu pesona yang dapat dinikmati adalah di Alas Harum. Objek wisata ini menawarkan wisata alam yang begitu seru. Tidak hanya menikmati alam, tapi juga berbagai wahana seru juga disajikan. Berbagai atraksi menantang adrenalin menjadi daya tarik utamanya. Tidak hanya itu, di sini juga terdapat restoran dan wisata kopi bagi para pecinta kopi. Untuk menikmati keindahan alam objek wisata ini, pengunjung tidak dikenakan tiket masuk. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae impedit, animi ipsam, totam a mollitia repudiandae praesentium sint expedita debitis nulla cupiditate quibusdam sit illum amet necessitatibus! Laborum, molestiae sit!</p>
                               </div>
                               <div className="container bg-gradient-to-l from-fuchsia-100 via-purple-200 to-pink-300 w-full h-full rounded-xl p-4 flex flex-wrap gap-10 items-center justify-center mx-auto max-w-3xl mt-7">

@@ -18,7 +18,7 @@ function App() {
           <Route path='/cari' element={<Searching />} />
           <Route path='/jelajah' element={<Browsing />} />
           <Route path='/rekomendasi' element={<Recommendation />} />
-          <Route path='/details' element={<Details />} />
+          <Route path='/details/:id' element={<Details />} />
         </Routes>
       </Router>
     </div>
