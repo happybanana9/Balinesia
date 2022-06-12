@@ -14,13 +14,13 @@ const Destination = () => {
     const resData = response.data.data;
     setWisata(resData);
     console.log(resData);
+    console.log(id)
   };
 
   useEffect(() => {
     getWisataDestination();
   }, [id]);
 
-  console.log(wisata.nama);
   return (
     <>
       <section id="Destinasi">
@@ -35,7 +35,7 @@ const Destination = () => {
                   <div className="min-h-full backdrop-blur-xl backdrop-brightness-50 p-4">
                     <div>
                       <img
-                        className="w-full h-40 object-cover rounded-xl"
+                        className="w-full h-40 md:h-80 object-cover rounded-xl"
                         src={value.picture_url}
                         alt=""
                       />

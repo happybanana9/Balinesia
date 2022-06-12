@@ -7,6 +7,7 @@ import Recommendation from './pages/Recommendation';
 import Browsing from './pages/Browsing';
 import Searching from './pages/Searching';
 import Details from './pages/Details';
+import Explore from './pages/Explore';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/jelajah' element={<Browsing />} />
           <Route path='/rekomendasi' element={<Recommendation />} />
           <Route path='/details/:id' element={<Details />} />
+          <Route path='/jelajah/location/:lokasi' element={<Explore />} />
         </Routes>
       </Router>
     </div>

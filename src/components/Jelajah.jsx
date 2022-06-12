@@ -1,7 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
+import { Link } from "react-router-dom";
 import wisata1 from "../assets/wisata1.jpg";
+
+const item = ['Karangasem','Gianyar']
+
 const Jelajah = () => {
+
   return (
     <section id="Jelajah">
       <div className="w-full h-full bg-theme3">
@@ -25,9 +30,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[0]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Karangasem
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
