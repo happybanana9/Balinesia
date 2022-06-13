@@ -1,15 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
-import karangasem from "../assets/karangasem.png";
-import badung from "../assets/badung.png";
-import bangli from "../assets/bangli.png";
-import gianyar from "../assets/gianyar.png";
-import buleleng from "../assets/buleleng.png";
-import klungkung from "../assets/klungkung.png";
-import tabanan from "../assets/tabanan.png";
-import jembrana from "../assets/jembrana.png";
-import denpasar from "../assets/denpasar.png";
+import { Link } from "react-router-dom";
+import wisata1 from "../assets/wisata1.jpg";
+
+const item = ['Karangasem','Bangli','Gianyar','Buleleng','Klungkung','Badung','Tabanan','Jembrana','Denpasar']
+
 const Jelajah = () => {
+
   return (
     <section id="Jelajah">
       <div className="w-full h-full bg-theme3">
@@ -24,18 +21,20 @@ const Jelajah = () => {
             {/* Cards And Background child Start */}
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${karangasem}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={karangasem}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[0]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Karangasem
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -45,18 +44,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${bangli}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={bangli}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[1]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Bangli
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -66,18 +67,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${gianyar}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={gianyar}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[2]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Gianyar
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -89,18 +92,20 @@ const Jelajah = () => {
           <div className="mt-12 gap-10 flex-wrap flex justify-center items-center">
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${buleleng}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={buleleng}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[3]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Buleleng
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -110,18 +115,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${klungkung}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={klungkung}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[4]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Klungkung
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -131,18 +138,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${badung}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={badung}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[5]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Badung
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -154,18 +163,20 @@ const Jelajah = () => {
           <div className="mt-12 gap-10 flex-wrap flex justify-center items-center">
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${tabanan}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={tabanan}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[6]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Tabanan
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -175,18 +186,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${jembrana}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={jembrana}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[7]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Jembrana
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -196,18 +209,20 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${denpasar}')` }}
+              style={{ backgroundImage: `url('${wisata1}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="mx-auto h-40 object-cover rounded-xl"
-                  src={denpasar}
+                  className="w-full h-40 object-cover rounded-xl"
+                  src={wisata1}
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[8]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Denpasar
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
