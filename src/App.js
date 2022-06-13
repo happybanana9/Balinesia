@@ -6,7 +6,7 @@ import Homepage from './pages/Homepage';
 import Recommendation from './pages/Recommendation';
 import Browsing from './pages/Browsing';
 import Searching from './pages/Searching';
-import Details from './pages/details';
+import Details from './pages/Details';
 import Explore from './pages/Explore';
 
 function App() {
