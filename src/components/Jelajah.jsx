@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import wisata1 from "../assets/wisata1.jpg";
 
-const item = ['Karangasem','Gianyar']
+const item = ['Karangasem','Bangli','Gianyar','Buleleng','Klungkung','Badung','Tabanan','Jembrana','Denpasar']
 
 const Jelajah = () => {
 
@@ -53,9 +53,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[1]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Bangli
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -74,9 +76,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[2]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Gianyar
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -97,9 +101,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[3]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Buleleng
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -118,9 +124,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[4]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Klungkung
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -139,9 +147,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[5]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Badung
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -162,9 +172,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[6]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Tabanan
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -183,9 +195,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[7]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Jembrana
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}
@@ -204,9 +218,11 @@ const Jelajah = () => {
                   alt=""
                 />
                 <div className="p-2">
+                <Link to={'/jelajah/location/' + item[8]}> 
                   <h2 className="font-bold text-lg mb-2 text-theme1 ">
                     Denpasar
                   </h2>
+                  </Link>
                   <p className="text-sm text-gray-100">
                     Simple Yet Beautiful Card Design with TaiwlindCss Subscribe
                     to our Youtube channel for more{" "}

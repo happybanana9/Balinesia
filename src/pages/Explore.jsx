@@ -23,7 +23,7 @@ function Explore() {
 
   return <>
           {wisata.map((value,index)=>{
-         return <div style={{ backgroundImage: `url('${value.picture_url}')` }} className="card-container"key={index}><Cards item={value}/></div>})}
+         return <div style={{ backgroundImage: `url('${value.picture_url}')` }} className="card-container flex-wrap items-center mx-auto justify-center mt-5 "key={index}><Cards item={value}/></div>})}
   </>;
 }
 
