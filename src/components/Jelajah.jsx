@@ -1,7 +1,15 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
 import { Link } from "react-router-dom";
-import wisata1 from "../assets/wisata1.jpg";
+
+function importAll(r) {
+  let images = {};
+  // eslint-disable-next-line no-unused-vars
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
 
 const item = ['Karangasem','Bangli','Gianyar','Buleleng','Klungkung','Badung','Tabanan','Jembrana','Denpasar']
 
@@ -17,16 +25,16 @@ const Jelajah = () => {
           <div className="mx-auto mt-1 text-theme1 md:mt-3 md:max-w-lg text-center lg:text-lg">
             Jelajahi Destinasi Wisata Yang Ada Di Bali
           </div>
-          <div className="mt-12 gap-10 grid grid-cols-1 grid-rows-1 sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 justify-items-center">
+          <div className="mt-12 gap-10 grid grid-cols-1 grid-rows-1 sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 justify-items-center w-fit mx-auto">
             {/* Cards And Background child Start */}
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['karangasem.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['karangasem.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -43,12 +51,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['bangli.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['bangli.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -65,12 +73,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['gianyar.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['gianyar.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -87,12 +95,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['buleleng.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['buleleng.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -109,12 +117,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['klungkung.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['klungkung.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -131,12 +139,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['badung.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['badung.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -153,12 +161,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['tabanan.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['tabanan.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -175,12 +183,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['jembrana.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['jembrana.png']}
                   alt=""
                 />
                 <div className="p-2">
@@ -197,12 +205,12 @@ const Jelajah = () => {
             </div>
             <div
               className="card-container w-80"
-              style={{ backgroundImage: `url('${wisata1}')` }}
+              style={{ backgroundImage: `url('${images['denpasar.png']}')` }}
             >
               <div className="min-h-full bg-slate-700 bg-opacity-30 backdrop-blur backdrop-brightness-50 p-3">
                 <img
-                  className="w-full h-40 object-cover rounded-xl"
-                  src={wisata1}
+                  className="w-full h-40 object-scale-down rounded-xl"
+                  src={images['denpasar.png']}
                   alt=""
                 />
                 <div className="p-2">

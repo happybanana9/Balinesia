@@ -26,7 +26,7 @@ function Explore() {
   <section id="Destinasi">
     <div className="w-full h-full bg-theme3">
       <div className="relative px-4 py-64 md:max-w-none text-center">
-        <div className="mt-12 gap-10 grid grid-cols-1 grid-rows-1 sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 justify-items-center">
+        <div className="mt-12 gap-10 flex flex-wrap justify-items-center w-fit mx-auto">
           {wisata.map((value,index)=>{
          return <div style={{ backgroundImage: `url('${value.picture_url}')` }} className="card-container flex-wrap items-center mx-auto justify-center mt-5 "key={index}><Cards item={value}/></div>})}
         </div>
