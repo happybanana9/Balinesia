@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Button from "./Button";
 
 const Destination = () => {
   const { id } = useParams();
@@ -25,7 +26,8 @@ const Destination = () => {
     <>
       <section id="Destinasi">
         <div className="w-full h-full bg-theme3">
-          <div className="relative px-4 py-32 pb-60 px-52 mx-auto my-auto md:max-w-none">
+          <div className="relative px-10 py-32 pb-60 md:px-[7.5rem] lg:px-52 sm:px-20 mx-auto my-auto md:max-w-none">
+          <Button></Button>
             {wisata.map((value,index) => {
               return (
                 <div key={index}
