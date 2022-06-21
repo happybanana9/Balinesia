@@ -22,6 +22,9 @@ const Cards = (props) => {
             <h3 className="text-center font-semibold text-theme1 mt-5">
               {props.item.lokasi}
             </h3>
+            <h3 className="text-center font-semibold text-theme1 mt-3">
+              {'Rp.' + props.item.harga}
+            </h3>
           </div>
         </div>
     </>
