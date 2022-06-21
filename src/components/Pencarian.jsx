@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import axios from "axios";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import Cards from "./Cards";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
@@ -19,35 +19,47 @@ const Location = [
 ];
 
 const Rating = [
-  { rate: "Rating" },
-  { rate: "⭐4-⭐5" },
-  { rate: "⭐3-⭐4" },
-  { rate: "⭐2-⭐3" },
-  { rate: "⭐1-⭐2" },
+  { rate: "Rating", value:0.0},
+  { rate: "⭐5", value:5.0},
+  { rate: "⭐4", value:4.0},
+  { rate: "⭐3", value:3.0},
+  { rate: "⭐2", value:2.0},
+  { rate: "⭐1", value:1.0},
 ];
-const Harga = [
-  { price: "Harga" },
-  { price: "Diatas 100.000" },
-  { price: "50.000 - 100.000" },
-  { price: "25.000 - 50.000" },
-  { price: "Gratis" },
+const HargaMinimum = [
+  { price: "Minimum" },
+  { price: 100000 },
+  { price: 50000 },
+  { price: 25000 },
+  { price: 0 },
+];
+const HargaMaksimum = [
+  { price: "Maksimum" },
+  { price: 100000 },
+  { price: 50000 },
+  { price: 25000 },
+  { price: 0 },
 ];
 
 const Pencarian = () => {
   const [selected, setSelected] = useState(Location[0]);
   const [selectedrate, setSelectedRate] = useState(Rating[0]);
-  const [selectedprice, setSelectedPrice] = useState(Harga[0]);
+  const [selectedMinimum, setSelectedMinimum] = useState(HargaMinimum[0]);
+  const [selectedMaksimum, setSelectedMaksimum] = useState(HargaMaksimum[0]);
   const [wisata, setWisata] = useState([]);
   const getWisata = async () => {
     const response = await axios.get("http://localhost:5000/api/destinations");
     const resData = response.data.data;
-    const resFilter = resData.filter((res) => res.lokasi == selected.name);
+    const resFilter = resData.filter((res) => 
+    res.lokasi == selected.name ||
+    res.harga >= selected.HargaMinimum ||
+    res.harga <= selected.HargaMaksimum ||
+    res.rating >= selected.rating
+);
     setWisata(resFilter);
+    console.log(wisata)
     console.log(selected)
   };
-  useEffect(() => {
-    getWisata();
-  }, []);
   return (
     <section id="Pencarian">
       <div className="w-full h-screen relative bg-theme3">
@@ -173,11 +185,11 @@ const Pencarian = () => {
                 </div>
               </Listbox>
               {/* Dropdown Location Start */}
-              <Listbox value={selectedprice} onChange={setSelectedPrice}>
+              <Listbox value={selectedMinimum} onChange={setSelectedMinimum}>
                 <div className="relative mt-1 mx-5">
                   <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate text-theme3">
-                      {selectedprice.price}
+                      {selectedMinimum.price}
                     </span>
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                       <SelectorIcon
@@ -193,7 +205,65 @@ const Pencarian = () => {
                     leaveTo="opacity-0"
                   >
                     <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                      {Harga.map((prices, priceId) => (
+                      {HargaMinimum.map((prices, priceId) => (
+                        <Listbox.Option
+                          key={priceId}
+                          className={({ active }) =>
+                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                              active
+                                ? "bg-amber-100 text-amber-900"
+                                : "text-gray-900"
+                            }`
+                          }
+                          value={prices}
+                        >
+                          {({ selected }) => (
+                            <>
+                              <span
+                                className={`block truncate ${
+                                  selected ? "font-medium" : "font-normal"
+                                }`}
+                              >
+                                {prices.price}
+                              </span>
+                              {selected ? (
+                                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                                  <CheckIcon
+                                    className="h-5 w-5"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : null}
+                            </>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Transition>
+                </div>
+              </Listbox>
+              {/* Dropdown Location Start */}
+              <Listbox value={selectedMaksimum} onChange={setSelectedMaksimum}>
+                <div className="relative mt-1 mx-5">
+                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                    <span className="block truncate text-theme3">
+                      {selectedMaksimum.price}
+                    </span>
+                    <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                      <SelectorIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </Listbox.Button>
+                  <Transition
+                    as={Fragment}
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                      {HargaMinimum.map((prices, priceId) => (
                         <Listbox.Option
                           key={priceId}
                           className={({ active }) =>
