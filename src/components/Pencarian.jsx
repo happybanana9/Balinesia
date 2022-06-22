@@ -1,30 +1,30 @@
 /* eslint-disable prettier/prettier */
 import axios from "axios";
-import React, { Fragment, useState } from "react";
+import React, { useEffect, Fragment, useState } from "react";
 import Cards from "./Cards";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 const Location = [
-  { name: "Lokasi" },
-  { name: "Karangasem" },
-  { name: "Bangli" },
-  { name: "Gianyar" },
-  { name: "Buleleng" },
-  { name: "Klungkung" },
-  { name: "Badung" },
-  { name: "Tabananan" },
-  { name: "Jembrana" },
-  { name: "Denpasar" },
+  { name: "Lokasi", value: "" },
+  { name: "Karangasem", value: "Karangasem" },
+  { name: "Bangli", value: "Bangli" },
+  { name: "Gianyar", value: "Gianyar" },
+  { name: "Buleleng", value: "Buleleng" },
+  { name: "Klungkung", value: "Klungkung" },
+  { name: "Badung", value: "Badung" },
+  { name: "Tabananan", value: "Tabananan" },
+  { name: "Jembrana", value: "Jembrana" },
+  { name: "Denpasar", value: "Denpasar" },
 ];
 
 const Rating = [
-  { rate: "Rating", value:0.0},
-  { rate: "⭐5", value:5.0},
-  { rate: "⭐4", value:4.0},
-  { rate: "⭐3", value:3.0},
-  { rate: "⭐2", value:2.0},
-  { rate: "⭐1", value:1.0},
+  { rate: "Rating", value: 0.0 },
+  { rate: "⭐5", value: 5.0 },
+  { rate: "⭐4", value: 4.0 },
+  { rate: "⭐3", value: 3.0 },
+  { rate: "⭐2", value: 2.0 },
+  { rate: "⭐1", value: 1.0 },
 ];
 const HargaMinimum = [
   { price: "Minimum" },
@@ -47,22 +47,22 @@ const Pencarian = () => {
   const [selectedMinimum, setSelectedMinimum] = useState(HargaMinimum[0]);
   const [selectedMaksimum, setSelectedMaksimum] = useState(HargaMaksimum[0]);
   const [wisata, setWisata] = useState([]);
+
   const getWisata = async () => {
     const response = await axios.get("http://localhost:5000/api/destinations");
     const resData = response.data.data;
-    const resFilter = resData.filter((res) => 
-    res.lokasi == selected.name ||
-    res.price >= selectedMinimum.price ||
-    res.price <= selectedMaksimum.price ||
-    res.rate >= selectedrate.value
-);
+
+    const resFilter = resData.filter((res) => { return (selected.value != "" ? selected.value == res.lokasi : true) })
+      .filter((res) => { return (selectedrate.value != "" ? res.rating >= selectedrate.value && res.rating < selectedrate.value + 1 : true) })
+      .filter((res) => { return (selectedMinimum.price != "Minimum" ? res.harga >= selectedMinimum.price : true) })
+      .filter((res) => { return (selectedMaksimum.price != "Maksimum" ? res.harga <= selectedMaksimum.price : true) });
     setWisata(resFilter);
-    console.log(resFilter)
-    // console.log(selected.name)
-    // console.log(selectedMinimum.price)
-    // console.log(selectedMaksimum.price)
-    // console.log(selectedrate.value)
   };
+
+  useEffect(() => {
+    getWisata()
+  }, [])
+
   return (
     <section id="Pencarian">
       <div className="w-full min-h-[91vh] h-full relative bg-theme3">
@@ -70,7 +70,7 @@ const Pencarian = () => {
           <h1 className="font-black text-3xl">Pencarian Destinasi Wisata di</h1>
           <h1 className="font-black text-3xl">Provinsi Bali</h1>
           <div className="flex flex-wrap items-center justify-center mt-5">
-            <div className="inline-flex flex-col md:flex-row text-left mb-4 md:mb-2">
+            <div className="inline-flex flex-col lg:flex-row text-left mb-4 md:mb-2">
               {/* Dropdown Location Start */}
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1 mx-5">
@@ -96,10 +96,9 @@ const Pencarian = () => {
                         <Listbox.Option
                           key={locationId}
                           className={({ active }) =>
-                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                              active
-                                ? "bg-amber-100 text-amber-900"
-                                : "text-gray-900"
+                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active
+                              ? "bg-amber-100 text-amber-900"
+                              : "text-gray-900"
                             }`
                           }
                           value={location}
@@ -107,9 +106,8 @@ const Pencarian = () => {
                           {({ selected }) => (
                             <>
                               <span
-                                className={`block truncate ${
-                                  selected ? "font-medium" : "font-normal"
-                                }`}
+                                className={`block truncate ${selected ? "font-medium" : "font-normal"
+                                  }`}
                               >
                                 {location.name}
                               </span>
@@ -154,10 +152,9 @@ const Pencarian = () => {
                         <Listbox.Option
                           key={ratesId}
                           className={({ active }) =>
-                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                              active
-                                ? "bg-amber-100 text-amber-900"
-                                : "text-gray-900"
+                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active
+                              ? "bg-amber-100 text-amber-900"
+                              : "text-gray-900"
                             }`
                           }
                           value={rates}
@@ -165,9 +162,8 @@ const Pencarian = () => {
                           {({ selected }) => (
                             <>
                               <span
-                                className={`block truncate ${
-                                  selected ? "font-medium" : "font-normal"
-                                }`}
+                                className={`block truncate ${selected ? "font-medium" : "font-normal"
+                                  }`}
                               >
                                 {rates.rate}
                               </span>
@@ -212,10 +208,9 @@ const Pencarian = () => {
                         <Listbox.Option
                           key={priceId}
                           className={({ active }) =>
-                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                              active
-                                ? "bg-amber-100 text-amber-900"
-                                : "text-gray-900"
+                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active
+                              ? "bg-amber-100 text-amber-900"
+                              : "text-gray-900"
                             }`
                           }
                           value={prices}
@@ -223,9 +218,8 @@ const Pencarian = () => {
                           {({ selected }) => (
                             <>
                               <span
-                                className={`block truncate ${
-                                  selected ? "font-medium" : "font-normal"
-                                }`}
+                                className={`block truncate ${selected ? "font-medium" : "font-normal"
+                                  }`}
                               >
                                 {prices.price}
                               </span>
@@ -270,10 +264,9 @@ const Pencarian = () => {
                         <Listbox.Option
                           key={priceId}
                           className={({ active }) =>
-                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                              active
-                                ? "bg-amber-100 text-amber-900"
-                                : "text-gray-900"
+                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active
+                              ? "bg-amber-100 text-amber-900"
+                              : "text-gray-900"
                             }`
                           }
                           value={prices}
@@ -281,9 +274,8 @@ const Pencarian = () => {
                           {({ selected }) => (
                             <>
                               <span
-                                className={`block truncate ${
-                                  selected ? "font-medium" : "font-normal"
-                                }`}
+                                className={`block truncate ${selected ? "font-medium" : "font-normal"
+                                  }`}
                               >
                                 {prices.price}
                               </span>
@@ -324,7 +316,6 @@ const Pencarian = () => {
           </div>
           <div className="relative z-0 mt-12 gap-8 flex-wrap flex justify-center items-center">
             {wisata.map((value, index) => {
-              // console.log(wisata)
               return (
                 <section
                   style={{ backgroundImage: `url('${value.picture_url}')` }}
