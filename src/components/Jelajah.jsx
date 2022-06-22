@@ -17,7 +17,7 @@ const Jelajah = () => {
 
   return (
     <section id="Jelajah">
-      <div className="w-full h-full bg-theme3">
+      <div className="w-full min-h-[91vh] h-full bg-theme3">
         <div className="relative px-4 py-32 text-left md:max-w-none md:text-center">
           <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-theme1 text-center sm:leading-none md:text-6xl lg:text-5xl">
             Mari Berjelajah!

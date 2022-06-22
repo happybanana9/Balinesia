@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <section className="w-full text-gray-700 bg-white body-font">
+    <section className="w-full z-10 relative bottom-0 text-gray-700 bg-white body-font">
       <div className="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
         <a
           href="#_"

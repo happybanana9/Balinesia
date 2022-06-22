@@ -52,17 +52,20 @@ const Pencarian = () => {
     const resData = response.data.data;
     const resFilter = resData.filter((res) => 
     res.lokasi == selected.name ||
-    res.harga >= selected.HargaMinimum ||
-    res.harga <= selected.HargaMaksimum ||
-    res.rating >= selected.rating
+    res.price >= selectedMinimum.price ||
+    res.price <= selectedMaksimum.price ||
+    res.rate >= selectedrate.value
 );
     setWisata(resFilter);
-    console.log(wisata)
-    console.log(selected)
+    console.log(resFilter)
+    // console.log(selected.name)
+    // console.log(selectedMinimum.price)
+    // console.log(selectedMaksimum.price)
+    // console.log(selectedrate.value)
   };
   return (
     <section id="Pencarian">
-      <div className="w-full h-screen relative bg-theme3">
+      <div className="w-full min-h-[91vh] h-full relative bg-theme3">
         <div className="relative px-8 py-32 md:max-w-none text-center text-theme1">
           <h1 className="font-black text-3xl">Pencarian Destinasi Wisata di</h1>
           <h1 className="font-black text-3xl">Provinsi Bali</h1>
@@ -263,7 +266,7 @@ const Pencarian = () => {
                     leaveTo="opacity-0"
                   >
                     <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                      {HargaMinimum.map((prices, priceId) => (
+                      {HargaMaksimum.map((prices, priceId) => (
                         <Listbox.Option
                           key={priceId}
                           className={({ active }) =>
@@ -321,6 +324,7 @@ const Pencarian = () => {
           </div>
           <div className="relative z-0 mt-12 gap-8 flex-wrap flex justify-center items-center">
             {wisata.map((value, index) => {
+              // console.log(wisata)
               return (
                 <section
                   style={{ backgroundImage: `url('${value.picture_url}')` }}
