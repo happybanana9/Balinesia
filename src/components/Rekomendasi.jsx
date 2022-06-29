@@ -15,7 +15,7 @@ const Rekomendasi = () => {
     const resSort = resFilter.sort(({rating: a}, {rating:b}) => b-a);
     setWisata(resSort);
   }
-
+  
   useEffect(()=>{
     getWisataRekomendasi()
   },[])
@@ -27,7 +27,7 @@ const Rekomendasi = () => {
           <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-theme1 text-center sm:leading-none md:text-6xl lg:text-7xl">
             Rekomendasi
           </h1>
-          <div className="mx-auto mt-1 text-theme1 md:mt-3 md:max-w-lg md:text-center lg:text-lg">
+          <div className="mx-auto mt-1 text-theme1 md:mt-3 md:max-w-lg md:text-center lg:text-lg text">
             Destinasi Wisata Yang Paling Disukai
           </div>
           {/* Cards And Background Start */}
