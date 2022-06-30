@@ -1,1 +1,6 @@
-/\* /index.html 200
+/src           /    200
+/src/Searching.jsx              /cari      200
+/src/Explore.jsx           /jelajah
+/src/Recommendation.jsx      /rekomendasi     200
+/src/Details.jsx      /details/:id     200
+/components/Jelajah.jsx    /jelajah/location/:lokasi     200
