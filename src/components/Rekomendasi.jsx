@@ -9,7 +9,7 @@ import "swiper/css";
 const Rekomendasi = () => {
   const [wisata, setWisata] = useState([]);
   const getWisataRekomendasi = async () => {
-    const response = await axios.get('http://localhost:5000/api/destinations');
+    const response = await axios.get('https://backend-balinesia.herokuapp.com/api/destinations');
     const resData = response.data.data;
     const resFilter = resData.filter((res) => res.rating >= 4.5);
     const resSort = resFilter.sort(({rating: a}, {rating:b}) => b-a);
@@ -23,8 +23,8 @@ const Rekomendasi = () => {
   return (
     <section id="Rekomendasi">
       <div className="w-full min-h-[91vh] h-full bg-theme3">
-        <div className="relative px-4 py-64 md:max-w-none text-center">
-          <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-theme1 text-center sm:leading-none md:text-6xl lg:text-7xl">
+        <div className="relative px-4 py-36 md:max-w-none text-center">
+          <h1 className="text-5xl xs:text-3xl font-extrabold leading-10 tracking-tight text-theme1 text-center sm:leading-none md:text-6xl lg:text-7xl">
             Rekomendasi
           </h1>
           <div className="mx-auto mt-1 text-theme1 md:mt-3 md:max-w-lg md:text-center lg:text-lg text">

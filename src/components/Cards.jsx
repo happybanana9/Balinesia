@@ -15,7 +15,7 @@ const Cards = (props) => {
           />
           <div className="p-2">
             <Link to={'/details/' + props.item.id}>     
-            <h2 className="font-bold text-lg mb-2 text-theme1 h-12 overflow-hidden flex justify-center items-center">{props.item.nama}</h2>
+            <h2 className="font-bold text-lg mb-2 text-theme1 h-12 overflow-hidden flex justify-center items-center hover:text-theme2">{props.item.nama}</h2>
             </Link>
             <p className="text-sm text-gray-100 ">{props.item.deskripsi.substring(0,60) +"..."}
             </p>

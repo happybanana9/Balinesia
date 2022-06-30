@@ -39,7 +39,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[0]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Karangasem
                   </h2>
                   </Link>
@@ -61,7 +61,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[1]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Bangli
                   </h2>
                   </Link>
@@ -83,7 +83,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[2]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Gianyar
                   </h2>
                   </Link>
@@ -105,7 +105,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[3]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Buleleng
                   </h2>
                   </Link>
@@ -127,7 +127,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[4]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Klungkung
                   </h2>
                   </Link>
@@ -149,7 +149,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[5]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Badung
                   </h2>
                   </Link>
@@ -171,7 +171,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[6]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Tabanan
                   </h2>
                   </Link>
@@ -193,7 +193,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[7]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Jembrana
                   </h2>
                   </Link>
@@ -215,7 +215,7 @@ const Jelajah = () => {
                 />
                 <div className="p-2">
                 <Link to={'/jelajah/location/' + item[8]}> 
-                  <h2 className="font-bold text-lg mb-2 text-theme1 ">
+                  <h2 className="font-bold text-lg mb-2 text-theme1 hover:text-theme2">
                     Denpasar
                   </h2>
                   </Link>

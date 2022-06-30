@@ -9,13 +9,11 @@ const Destination = () => {
   const [wisata, setWisata] = useState([]);
   const getWisataDestination = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/destinations/" + id,
+      "https://backend-balinesia.herokuapp.com/api/destinations/" + id,
       { params: { id } }
     );
     const resData = response.data.data;
     setWisata(resData);
-    console.log(resData);
-    console.log(id)
   };
 
   useEffect(() => {

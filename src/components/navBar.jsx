@@ -26,10 +26,8 @@ const NavBar = () => {
                 onToggle={(toggled) => {
                   if (toggled) {
                     // open a menu
-                    console.log(toggled);
                   } else {
                     // close a menu
-                    console.log(toggled);
                   }
                 }}
               />

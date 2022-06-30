@@ -49,7 +49,7 @@ const Pencarian = () => {
   const [wisata, setWisata] = useState([]);
 
   const getWisata = async () => {
-    const response = await axios.get("http://localhost:5000/api/destinations");
+    const response = await axios.get("https://backend-balinesia.herokuapp.com/api/destinations");
     const resData = response.data.data;
 
     const resFilter = resData.filter((res) => { return (selected.value != "" ? selected.value == res.lokasi : true) })
@@ -74,7 +74,7 @@ const Pencarian = () => {
               {/* Dropdown Location Start */}
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1 mx-5">
-                  <Listbox.Button className="relative w-full h-auto cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <Listbox.Button className="relative w-full h-auto cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-yellow-600 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate text-theme3">
                       {selected.name}
                     </span>
@@ -130,7 +130,7 @@ const Pencarian = () => {
               {/* Dropdown Location Start */}
               <Listbox value={selectedrate} onChange={setSelectedRate}>
                 <div className="relative mt-1 mx-5">
-                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-yellow-600 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate text-theme3">
                       {selectedrate.rate}
                     </span>
@@ -186,7 +186,7 @@ const Pencarian = () => {
               {/* Dropdown Location Start */}
               <Listbox value={selectedMinimum} onChange={setSelectedMinimum}>
                 <div className="relative mt-1 mx-5">
-                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-yellow-600 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate text-theme3">
                       {selectedMinimum.price}
                     </span>
@@ -242,7 +242,7 @@ const Pencarian = () => {
               {/* Dropdown Location Start */}
               <Listbox value={selectedMaksimum} onChange={setSelectedMaksimum}>
                 <div className="relative mt-1 mx-5">
-                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 p-20 text-left shadow-md focus:outline-none focus-visible:border-yellow-600 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate text-theme3">
                       {selectedMaksimum.price}
                     </span>
@@ -296,7 +296,7 @@ const Pencarian = () => {
                 </div>
               </Listbox>
             </div>
-            <button onClick={getWisata} className="inline-flex items-center px-5 py-2 mx-4 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-3xl max-h-10 max-w-sm">
+            <button onClick={getWisata} className="inline-flex items-center px-5 py-2 mx-4 bg-theme2 hover:bg-yellow-100 text-theme3 text-sm font-medium rounded-3xl max-h-10 max-w-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 mr-2"
